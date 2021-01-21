@@ -1,13 +1,26 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('flavours').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('flavours').insert([
+        {flavour : "Original"},
+        {flavour : "Jasmine"},
+        {flavour : "Earl Grey"},
+        {flavour : "Taro"},
+        {flavour : "Matcha"},
+        {flavour : "Egg"},
+        {flavour : "Mango"},
+        {flavour : "Peach"},
+        {flavour : "Black Tea"},
+        {flavour : "Green Tea"},
+        {flavour : "Roast Rice"},
+        {flavour : "Milk Tea"},
+        {flavour : "Rose"},
+        {flavour : "Chocolate"},
+        {flavour : "Oolong"},
+        {flavour : "Honey"}
       ]);
     });
 };

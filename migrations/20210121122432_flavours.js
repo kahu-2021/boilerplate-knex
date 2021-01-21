@@ -1,8 +1,10 @@
-
-exports.up = function(knex) {
-  
+exports.up = (knex, Promise) => {
+    return knex.schema.createTable('flavours', (table) => {
+        table.increments('id').primary()
+        table.string('flavour')
+      })
 };
 
-exports.down = function(knex) {
-  
+exports.down = (knex, Promise) => {
+    return knex.schema.dropTable('flavours')
 };

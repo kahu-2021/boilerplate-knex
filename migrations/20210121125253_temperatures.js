@@ -1,8 +1,13 @@
 
-exports.up = function(knex) {
+exports.up = (knex, Promise) => {
+    return knex.schema.createTable('temperatures', (table) => {
+        table.increments('id').primary()
+        table.string('temperature')
+      })
   
 };
 
-exports.down = function(knex) {
-  
+exports.down = (knex, Promise) => {
+    return knex.schema.dropTable('temperatures')
 };
+
