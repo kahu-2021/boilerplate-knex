@@ -5,9 +5,15 @@
   </head>
   <body>
     <ul>
+      
     {{#each users}}
-      <li>{{name}} ({{email}})</li>
+      <li> <a href="/games/{{id}}">{{name}}</a></li>
     {{/each}}
+    <br>
+    <a href="/addGame">Add a game</a>
+    <br>
+    <a href="/addGameAndPerson">Add a game and a person</a>
+    <br>
     </ul>
   </body>
 </html>
