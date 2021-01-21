@@ -27,6 +27,15 @@ router.get('/games/:id', (req, res) => {
 })
 
 
+router.get("/findCommonGames", (req, res) => {
+
+  res.render("findCommonGames", {})
+})
+
+
+
+
+
 // HELPFUL THINGS FOR TESTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 //testing purposes
