@@ -2,12 +2,12 @@ const request = require('supertest')
 const cheerio = require('cheerio')
 
 jest.mock('../db', () => ({
-  getUser: (id) => Promise.resolve(
-    {id: id, name: 'test user', email: 'test@user.nz'}
+  getguitar: (id) => Promise.resolve(
+    {id: id, name: 'test guitar', email: 'test@guitar.nz'}
   ),
-  getUsers: () => Promise.resolve([
-    {id: 2, name: 'test user 2', email: 'test2@user.nz'},
-    {id: 4, name: 'test user 4', email: 'test4@user.nz'}
+  getguitars: () => Promise.resolve([
+    {id: 2, name: 'test guitar 2', email: 'test2@guitar.nz'},
+    {id: 4, name: 'test guitar 4', email: 'test4@guitar.nz'}
   ])
 }))
 
@@ -20,7 +20,7 @@ test('GET /', () => {
     .then((res) => {
       const $ = cheerio.load(res.text)
       const firstLiText = $('li').first().text()
-      expect(firstLiText).toBe('test user 2 (test2@user.nz)')
+      expect(firstLiText).toBe('test guitar 2 (test2@guitar.nz)')
     })
     .catch(err => expect(err).toBeNull())
 })

@@ -5,9 +5,9 @@ const db = require('../db')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getUsers()
-    .then(users => {
-      res.render('index', {users: users})
+  db.getguitars()
+    .then(guitars => {
+      res.render('index', {guitars: guitars})
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

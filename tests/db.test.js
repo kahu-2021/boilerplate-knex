@@ -10,22 +10,22 @@ beforeEach(() => {
 
 afterEach(() => testEnv.cleanup(testDb))
 
-test('getUsers gets all users', () => {
+test('getguitars gets all guitars', () => {
   // One for each letter of the alphabet!
   const expected = 3
-  return db.getUsers(testDb)
-    .then(users => {
-      const actual = users.length
+  return db.getguitars(testDb)
+    .then(guitars => {
+      const actual = guitars.length
       expect(actual).toBe(expected)
     })
     .catch(err => expect(err).toBeNull())
 })
 
-test('getUser gets a single user', () => {
-  const expected = 'test user 1'
-  return db.getUser(99901, testDb)
-    .then(user => {
-      const actual = user.name
+test('getguitar gets a single guitar', () => {
+  const expected = 'test guitar 1'
+  return db.getguitar(99901, testDb)
+    .then(guitar => {
+      const actual = guitar.name
       expect(actual).toBe(expected)
     })
     .catch(err => expect(err).toBeNull())
