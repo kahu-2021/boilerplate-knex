@@ -4,7 +4,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getguitar: getguitar,
-  getguitars: getguitars
+  getguitars: getguitars,
+  getGuitarBrands: getGuitarBrands
 }
 
 function getguitars (db = connection) {
@@ -13,4 +14,11 @@ function getguitars (db = connection) {
 
 function getguitar (id, db = connection) {
   return db('guitars').where('id', id).first()
+}
+
+function getGuitarBrands (brand, db = connection) {
+
+  return db('guitars').join('brands', 'brand.id', 'guitars.brand_id').where('brand', brand).select('*', 'brands.id AS id')
+
+
 }

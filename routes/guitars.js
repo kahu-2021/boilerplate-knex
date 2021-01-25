@@ -14,4 +14,14 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/brands', (req, res) => {
+  db.getGuitarBrands()
+    .then(guitars => {
+      res.render('index', {guitars: guitars})
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 module.exports = router
