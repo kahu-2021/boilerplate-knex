@@ -18,7 +18,6 @@ function getguitar (id, db = connection) {
 
 function getGuitarBrands (brand, db = connection) {
 
-  return db('guitars').join('brands', 'brand.id', 'guitars.brand_id').where('brand', brand).select('*', 'brands.id AS id')
-
+  return db('guitars').join("brands", "brands.id", "guitars.brand_id").select("guitars.id as id", "brands.name as brand_name", "guitars.name as guitar_name").where("brands.name", brand)
 
 }

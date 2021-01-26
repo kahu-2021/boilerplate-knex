@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EDA Phase 1 Express Boilerplate</title>
+    <title>Main</title>
   </head>
   <body>
+      <h1>Main</h1>
+      {{{body}}}
     <ul>
     Guitars
     {{#each guitars}}
       <li>{{name}}</li>
     {{/each}}
     </ul>
+    <form action="/brands" method="post">
+<select name="brands" id="brands">
+  <option name="brand" value="Cole Clark">Cole Clark</option>
+  <option name="brand" value="Taylor">Taylor</option>
+  <option name="brand" "Takamine">Takamine</option>
+  <option name="brand" value="Guild">Guild</option>
+</select>
+<input type="submit" value="Submit"/>
+</form>
   </body>
+
 </html>
